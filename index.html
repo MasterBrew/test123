@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response Page</title>
+</head>
+<body>
+    <h1>Test123 Endpoint Response</h1>
+    <div id="response"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const endpoint = urlParams.get('endpoint');
+            
+            if (endpoint === 'test123') {
+                document.getElementById('response').innerText = 'This is the response for the /test123 endpoint.';
+            } else {
+                document.getElementById('response').innerText = 'Unknown endpoint.';
+            }
+        });
+    </script>
+</body>
+</html>
